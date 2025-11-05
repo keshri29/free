@@ -1,0 +1,82 @@
+@import "../../scss/mixins";
+
+$primary-color: #830a10; // Red color
+$secondary-color: #fff;  // White color
+$border-color: #b7ab98; // This will be updated for better contrast
+
+.introduction {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 98;
+  background-color: $primary-color;
+
+  svg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: calc(100% + 300px);
+
+    path {
+      fill: $primary-color;
+    }
+  }
+
+  .start {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+
+    img {
+      border-radius: 100%;
+      overflow: hidden;
+    }
+
+    button {
+      height: 5.275rem;
+      width: 20.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $secondary-color;  // Button text color (white)
+      padding: 1px 6px;
+      border: 1px solid $secondary-color;  // Button border (white)
+      border-radius: 4.375rem;
+      background: transparent;
+      cursor: pointer;
+      transform: translateY(4rem);
+      transition: all ease-in-out 0.5s;
+      letter-spacing: 4px;
+      font-weight: 700;
+      text-transform: uppercase;
+
+      @include respond(phone) {
+        height: 6.8rem;
+        transform: translateY(8rem);
+        font-weight: 900;
+        width: 25.5rem;
+      }
+
+      p {
+        color: inherit;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 5rem;
+
+        @include respond(phone) {
+          font-size: 1.7rem;
+        }
+      }
+
+      &:hover {
+        background-color: $secondary-color;  // White background on hover
+        color: $primary-color;  // Red text color on hover
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+@import "../../scss/mixins";
+
+.main {
+  .aboutBody {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: default;
+
+    .aboutContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding-left: var(--bodymarginLeft);
+      padding-right: var(--bodymarginLeft);
+
+      .headerText {
+        color: var(--primaryText);
+      }
+
+      p {
+        max-width: 1250px;
+        min-height: 6em;
+        letter-spacing: -.07em;
+        font-weight: var(--bodyMdFontWeight);
+        font-size: var(--bodyMdTextSize);
+        color: var(--primaryText);
+      }
+    }
+  }
+
+  .servicesBody {
+    width: 100%;
+    margin-bottom: 30rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    cursor: default;
+
+    .servicesContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+
+      h3 {
+        margin-left: var(--bodymarginLeft);
+        color: var(--primaryText);
+      }
+
+      .wrapper {
+        font-size: var(--servicesTextSize);
+        line-height: 165%;
+        letter-spacing: -0.15em;
+        text-transform: uppercase;
+        color: var(--primaryText);
+
+        h1 {
+          border-bottom: 1px solid var(--accentRed) !important;
+
+          .line {
+            padding-left: var(--bodymarginLeft);
+            border-top: 1px solid var(--accentRed);
+            padding-top: 3px;
+            padding-bottom: 3px;
+          }
+        }
+      }
+    }
+  }
+}

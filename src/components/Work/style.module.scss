@@ -1,0 +1,313 @@
+@import "../../scss/mixins";
+
+.main {
+  // height: 100vh;
+
+  .backgroundImage {
+    width: 100%;
+    height: 100%;
+  }
+
+  .experienceBody {
+    width: 100%;
+    margin-top: -20rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--primaryText);
+    cursor: default;
+    position: relative;
+
+    @include respond(tab-port) {
+      height: auto;
+    }
+
+    .experienceContainer {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      gap: 2rem;
+      padding-left: var(--bodymarginLeft);
+      padding-right: var(--bodymarginLeft);
+
+      @include respond(tab-port) {
+        margin-top: 25rem;
+        margin-bottom: 30rem;
+        max-width: 700px;
+        padding-left: var(--bodyMobileMarginLeft);
+        padding-right: var(--bodyMobileMarginLeft);
+      }
+
+      @include respond(phone) {
+        max-width: 400px;
+      }
+
+      p {
+        max-width: 1400px;
+        min-height: 6em;
+        letter-spacing: -0.07em;
+        font-weight: var(--bodyMdFontWeight);
+        font-size: var(--bodyMdTextSize);
+
+        @include respond(tab-land) {
+          max-width: 700px;
+          font-size: var(--bodyTabletMdTextSize);
+        }
+
+        @include respond(tab-port) {
+          font-size: var(--bodyMobileMdTextSize);
+        }
+      }
+
+      .history {
+        position: absolute;
+        bottom: 3rem;
+      }
+    }
+  }
+
+  .historyBody {
+    width: 100%;
+    // height: 75vh;
+    color: var(--primaryText);
+    cursor: default;
+    position: relative;
+
+    .historyContainer {
+      .wrapper {
+        font-size: var(--historyTextSize);
+        line-height: 165%;
+        letter-spacing: -0.1em;
+        // text-transform: uppercase;
+
+        @include respond(tab-port) {
+          font-size: var(--historyMobileTextSize);
+        }
+
+        h1 {
+          .line {
+            padding-left: var(--bodymarginLeft);
+            padding-right: var(--bodymarginLeft);
+
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+            border-bottom: 1px solid var(--secondaryText);
+            display: flex;
+            gap: 18rem;
+
+            @include respond(tab-port) {
+              padding-left: var(--bodyMobileMarginLeft);
+              padding-right: var(--bodyMobileMarginLeft);
+              margin-left: 0;
+              gap: 5rem;
+            }
+
+            .role {
+              font-size: 1.7rem;
+              margin-top: 1rem;
+              letter-spacing: 0em;
+              font-weight: lighter;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .projectsBody {
+    width: 100%;
+    // height: 100vh;
+    margin-top: 30rem;
+    margin-bottom: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--primaryText);
+    cursor: default;
+
+    @include respond(tab-port) {
+      // height: 75vh;
+      justify-content: start;
+    }
+
+    .projectsContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding-left: var(--bodymarginLeft);
+      padding-right: var(--bodymarginLeft);
+
+      @include respond(tab-port) {
+        max-width: 700px;
+        padding-left: var(--bodyMobileMarginLeft);
+        padding-right: var(--bodyMobileMarginLeft);
+      }
+
+      @include respond(phone) {
+        max-width: 400px;
+      }
+
+      p {
+        max-width: 1250px;
+        min-height: 7em;
+        letter-spacing: -0.07em;
+        font-weight: var(--bodyMdFontWeight);
+        font-size: var(--bodyMdTextSize);
+
+        @include respond(tab-land) {
+          max-width: 700px;
+          font-size: var(--bodyTabletMdTextSize);
+        }
+
+        @include respond(tab-port) {
+          font-size: var(--bodyMobileMdTextSize);
+        }
+      }
+    }
+
+    .projectsTitleContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+
+      h3 {
+        margin-left: var(--bodymarginLeft);
+
+        @include respond(tab-port) {
+          margin-left: var(--bodyMobileMarginLeft);
+        }
+      }
+
+      .wrapper {
+        font-size: var(--workTextSize);
+        line-height: 165%;
+        letter-spacing: -0.15em;
+        text-transform: uppercase;
+        position: relative;
+        // z-index: 900;
+
+        @include respond(tab-land) {
+          font-size: var(--workTabletTextSize);
+        }
+
+        @include respond(tab-port) {
+          font-size: var(--workMobileTextSize);
+        }
+
+        .imgContainer {
+          width: 100%;
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: -5;
+          top: -10%;
+          right: 0;
+          object-position: center;
+          object-fit: contain;
+
+          .img {
+            width: 1000px;
+            height: 1000px;
+
+            @include respond(tab-land) {
+              width: 600px;
+              height: 600px;
+            }
+
+            @include respond(phone) {
+              width: 500px;
+              height: 500px;
+            }
+          }
+        }
+
+        h1 {
+          border-bottom: 1px solid var(--secondaryText) !important;
+
+          .line {
+            padding-left: var(--bodymarginLeft);
+            border-top: 1px solid var(--secondaryText);
+            padding-top: 3px;
+            padding-bottom: 3px;
+
+            @include respond(tab-port) {
+              padding-left: var(--bodyMobileMarginLeft);
+            }
+
+            .text {
+              display: flex;
+              flex-direction: column;
+              // align-items: flex-end;
+              gap: 1rem;
+
+              .details {
+                position: relative;
+                z-index: 0;
+                display: flex;
+                flex-direction: row;
+                gap: 4rem;
+                font-weight: 400;
+
+                @include respond(phone) {
+                  flex-direction: column;
+                  gap: 0;
+                }
+
+                .stack {
+                  line-height: normal;
+                  font-size: 2rem !important;
+                  display: flex;
+                  align-items: center;
+                  gap: 2rem;
+                  letter-spacing: normal;
+                  text-transform: none;
+                }
+
+                .redirects {
+                  line-height: normal;
+                  font-size: 2rem !important;
+                  display: flex;
+                  align-items: center;
+                  gap: 2rem;
+                  letter-spacing: normal;
+                  text-decoration: underline;
+                  text-transform: none;
+
+                  a {
+                    &:hover {
+                      color: var(--alternateText);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .balls {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        padding-left: var(--bodymarginLeft);
+        margin-top: 3rem;
+
+        @include respond(tab-port) {
+          padding-left: var(--bodyMobileMarginLeft);
+        }
+
+        .ball {
+          width: 1.2rem;
+          height: 1.2rem;
+          border-radius: 50%;
+          background-color: var(--primaryText);
+        }
+      }
+    }
+  }
+}

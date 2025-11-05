@@ -1,0 +1,27 @@
+{
+  "name": "logan",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.9",
+    "@mui/material": "^5.14.10",
+    "@next/font": "^13.5.3",
+    "framer-motion": "^10.16.4",
+    "gsap": "^3.12.2",
+    "install": "^0.13.0",
+    "locomotive-scroll": "^5.0.0-beta.8",
+    "next": "13.4.19",
+    "npm": "^10.1.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "sass": "^1.66.1"
+  }
+}

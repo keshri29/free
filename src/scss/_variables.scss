@@ -1,0 +1,80 @@
+:root {
+  // COLOR PALETTE - Black & Red Theme
+  --primaryText: #e0e0e0;
+  --secondaryText: #b8b8b8;
+  --linkText: #d4af37; // Gold accent for better contrast
+  --alternateText: #4a4a4a;
+  
+  // Main background - Deep black with subtle red undertone
+  --primaryBg: #0a0405;
+  
+  // Accent colors - Various red shades
+  --accentRed: #8B0000;        // Dark red for primary elements
+  --accentRedLight: #a52a2a;   // Medium red for highlights
+  --accentRedDark: #450a0a;    // Very dark red for backgrounds
+  
+  // Neutral shades for balance
+  --neutralDark: #1a1a1a;
+  --neutralMedium: #2d2d2d;
+  --neutralLight: #3a3a3a;
+
+  // PADDING (unchanged)
+  --pagePadding: 0 7rem;
+  --pageMobilePadding: 0 3.5rem;
+  --bodyPadding: 0 12rem;
+  --bodyMobilePadding: 0 3rem;
+
+  // MARGIN (unchanged)
+  --bodymarginLeft: 12%;
+  --bodyMobileMarginLeft: 2.9rem;
+
+  // FONT SIZE (unchanged)
+  --headerTextSize: 1.5rem;
+  --headerMobileTextSize: 2rem;
+  --navTextSize: 1.5rem;
+  --navMobileTextSize: 1.9rem;
+  --bannerTextSize: 6.275rem;
+  --bannerTabletTextSize: 4rem;
+  --bannerMobileTextSize: 5.3rem;
+  --servicesTextSize: 6rem;
+  --servicesTabletTextSize: 5.8rem;
+  --servicesMobileTextSize: 4.2rem;
+  --workTextSize: 6rem;
+  --workTabletTextSize: 5.8rem;
+  --workMobileTextSize: 4.2rem;
+  --historyTextSize: 1.8rem;
+  --historyMobileTextSize: 1.6rem;
+  --bodyMdTextSize: 7.5rem;
+  --bodyMobileMdTextSize: 6.6rem;
+  --bodyTabletMdTextSize: 5.6rem;
+  --bodyMdFontWeight: 700;
+}
+
+/* Optional: Additional utility classes for the theme */
+.theme-elements {
+  /* For main content areas */
+  .content-bg {
+    background-color: var(--primaryBg);
+  }
+  
+  /* For cards and containers */
+  .card-bg {
+    background-color: var(--neutralDark);
+    border: 1px solid var(--accentRedDark);
+  }
+  
+  /* For buttons and interactive elements */
+  .accent-element {
+    background-color: var(--accentRed);
+    color: var(--primaryText);
+  }
+  
+  .accent-element:hover {
+    background-color: var(--accentRedLight);
+  }
+  
+  /* For borders and separators */
+  .border-accent {
+    border-color: var(--accentRed);
+  }
+}

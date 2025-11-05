@@ -1,0 +1,42 @@
+@import "./mixins";
+
+
+.alternate {
+    color: var(--alternateText);
+}
+
+.headerText {
+    font-size: var(--headerTextSize);
+    letter-spacing: .5em;
+    line-height: 130%;
+    text-transform: uppercase;
+
+    @include respond(phone) {
+        font-size: var(--headerMobileTextSize);
+    }
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.mask{
+    mask-image: url('../../public/mask.svg');
+    mask-repeat: no-repeat;
+    // mask-size: 40px;
+    background: var(--alternateText);
+    position: absolute;
+    z-index: 999;
+    color: rgb(255, 255, 255);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    @include respond(tab-port) {
+       opacity: 0 !important;
+       display: none;
+    }
+  }
+  
