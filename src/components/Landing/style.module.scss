@@ -188,3 +188,24 @@
     
     }
 }
+// Add to your style.module.scss
+.navbar {
+  position: relative;
+  z-index: 1000;
+}
+
+.links {
+  position: relative;
+  z-index: 1001;
+  
+  a {
+    position: relative;
+    z-index: 1002;
+    pointer-events: all !important;
+  }
+}
+
+// Ensure video doesn't block clicks
+.backgroundVideo {
+  pointer-events: none;
+}

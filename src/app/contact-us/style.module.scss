@@ -1,0 +1,204 @@
+@import "../../scss/mixins";
+
+.contactSection {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 1rem;
+  min-height: 100vh;
+  background: radial-gradient(circle at center, rgba(255, 0, 0, 0.1), transparent 70%);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.backgroundGlow {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 0, 0, 0.3), transparent 70%);
+  animation: moveGlow 6s infinite alternate ease-in-out;
+  filter: blur(100px);
+  z-index: 0;
+}
+
+@keyframes moveGlow {
+  0% {
+    top: 10%;
+    left: 15%;
+  }
+  100% {
+    top: 70%;
+    left: 70%;
+  }
+}
+
+.glassCard {
+  width: 100%;
+  max-width: 900px;
+  height: 500px;
+  padding: 2.8rem;
+  border-radius: 25px;
+  background: rgba(15, 15, 15, 0.75);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  box-shadow: 0 0 50px rgba(255, 0, 0, 0.3);
+  backdrop-filter: blur(18px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(120deg, #ff003c, #ff6600, #ff003c);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: borderGlow 6s linear infinite;
+    z-index: -1;
+  }
+
+  @keyframes borderGlow {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 200% 50%;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+
+    .inputGroup {
+      position: relative;
+      width: 100%;
+    }
+
+    button {
+      background: linear-gradient(90deg, #ff003c, #ff6600);
+      border: none;
+      color: #fff;
+      font-weight: 700;
+      border-radius: 10px;
+      cursor: pointer;
+      padding: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: scale(1.07);
+        box-shadow: 0 0 40px rgba(255, 0, 0, 0.6);
+      }
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+
+    .status {
+      text-align: center;
+      color: #00ff88;
+      font-weight: 600;
+      margin-top: 0.5rem;
+      animation: fadeIn 0.6s ease-in-out forwards;
+    }
+  }
+}
+
+.inputGroup {
+  position: relative;
+  width: 100%;
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 0, 0, 0.4);
+    color: white;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+
+    &:focus {
+      outline: none;
+      transform: scale(1.02);
+      border-color: #ff6600;
+      box-shadow: 0 0 25px rgba(255, 0, 0, 0.5);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    &:focus + label,
+    &:not(:placeholder-shown) + label {
+      top: -10px;
+      left: 15px;
+      font-size: 0.8rem;
+      color: #ff6600;
+    }
+  }
+
+  label {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+}
+
+
+
+.status {
+  text-align: center;
+  color: #00ff88;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  animation: fadeIn 0.6s ease-in-out forwards;
+}
+
+.title {
+  font-size: 2.3rem;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 25px rgba(255, 0, 0, 0.5);
+}
+
+.subtitle {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 1rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 600px) {
+  .glassCard {
+    padding: 2rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+}

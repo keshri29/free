@@ -2,7 +2,7 @@
 import styles from "./style.module.scss";
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import gsap from "gsap";
 import useMousePosition from "../../utils/useMousePosition";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -12,7 +12,6 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 
 export default function Index({}) {
   const [isActive, setIsActive] = useState("about");
-
   const { x, y } = useMousePosition();
 
   useEffect(() => {
@@ -28,6 +27,7 @@ export default function Index({}) {
       },
     });
   }, []);
+  
 
   return (
     <>
@@ -37,7 +37,7 @@ export default function Index({}) {
           <div className={styles.mobileShadeBottom}></div>
         </div>
         <div className={styles.navbar}>
-          <Image className={styles.logo} src="/logo.gif" alt="navbarLogo" width={60} height={60} />
+          <Image className={styles.logo1} src="/logo1.gif" alt="navbarlogo1" width={60} height={60} />
           <div className={styles.links}>
             {[
               {
@@ -51,9 +51,14 @@ export default function Index({}) {
               {
                 name: "contact",
                 hash: "#contact",
-              },
+              }
             ].map(({ name, hash }) => (
-              <Link key={name} className={`${isActive === name ? styles.activeLink : ""}`} href={hash}>
+              <Link 
+                key={name} 
+                className={`${isActive === name ? styles.activeLink : ""}`} 
+                href={hash}
+                onClick={() => setIsActive(name)}
+              >
                 {name}
               </Link>
             ))}
@@ -125,7 +130,7 @@ export default function Index({}) {
             </div>
           </div>
         </div>
-        <video playsinline autoPlay loop muted disablePictureInPicture controlsList="nodownload nofullscreen noremoteplayback" className={styles.backgroundVideo}>
+        <video playsInline autoPlay loop muted disablePictureInPicture controlsList="nodownload nofullscreen noremoteplayback" className={styles.backgroundVideo}>
           <source src="/bgvideo.mp4" type="video/mp4" />
         </video>
       </div>

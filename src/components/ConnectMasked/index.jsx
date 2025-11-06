@@ -84,8 +84,7 @@ export default function Index({ setIsHovered }) {
                 </div>
               </div>
             </div>
-          </div>
-          <span className={styles.credit}>Design Credit: Minh Pham</span>
+          </div> 
         </div>
       </main>
     </>

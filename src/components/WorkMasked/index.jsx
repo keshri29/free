@@ -85,25 +85,25 @@ export default function Index({ setIsHovered }) {
                   {
                     name: "TopDevFirms",
                     stack: "Next.js, Node.js, MongoDB, TypeScript, Tailwind",
-                    href1: "https://github.com/keshri29/TopDevFirms",
+                    href1: "https://github.com/keshri29",
                     href2: "https://topdevfirms.vercel.app/",
                   },
                   {
                     name: "Verified Platform",
                     stack: "React.js, Node.js, Express, Tailwind, MongoDB",
-                    href1: "https://github.com/keshri29/Verified-Platform",
+                    href1: "https://github.com/keshri29",
                     href2: "https://verified-platform.vercel.app/",
                   },
                   {
                     name: "TurboCV",
                     stack: "React.js, Node.js, MongoDB, Express",
-                    href1: "https://github.com/keshri29/TurboCV",
+                    href1: "https://github.com/keshri29",
                     href2: "https://turbocv.vercel.app/",
                   },
                   {
                     name: "My Portfolio",
                     stack: "Next.js, SCSS, Framer Motion",
-                    href1: "https://github.com/keshri29/Portfolio",
+                    href1: "https://github.com/keshri29",
                     href2: "https://anuragkumar.com/",
                   },
                 ].map(({ name, stack, href1, href2 }) => (

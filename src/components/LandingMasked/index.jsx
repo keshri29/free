@@ -16,7 +16,7 @@ export default function Index({ setIsHovered }) {
           <div className={styles.mobileShadeBottom}></div>
         </div>
         <div className={styles.navbar}>
-          <Image className={styles.logo} src="/logo.gif" alt="navbarLogo" width={60} height={60} />
+          <Image className={styles.logo1} src="/logo1.gif" alt="navbarlogo1" width={60} height={60} />
           <div className={styles.links}>
             {[
               {

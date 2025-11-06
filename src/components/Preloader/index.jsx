@@ -41,7 +41,7 @@ export default function Index({ setIsLoading }) {
   };
 
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  const initialValue = "Get Started";
+  const initialValue = "Let’s Go";
   const [text, setText] = useState(initialValue);
 
   const handleMouseOver = () => {
@@ -72,7 +72,7 @@ export default function Index({ setIsLoading }) {
       {dimension.width > 0 && (
         <>
           <motion.div variants={fadeIn} initial="initial" animate="enter" className={styles.start}>
-            <Image className={styles.img} src="/logo.gif" alt="preloaderLogo" width={70} height={70} />
+            <Image className={styles.img} src="/logo1.gif" alt="preloaderlogo1" width={150} height={150} />
             <button onClick={handleButtonClick} className={styles.button} onMouseOver={handleMouseOver}>
               {text}
             </button>
