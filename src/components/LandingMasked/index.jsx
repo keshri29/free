@@ -16,19 +16,25 @@ export default function Index({ setIsHovered }) {
           <div className={styles.mobileShadeBottom}></div>
         </div>
         <div className={styles.navbar}>
-          <Image className={styles.logo1} src="/logo1.gif" alt="navbarlogo1" width={60} height={60} />
+          <Image
+            className={styles.logo1}
+            src="/logo1.gif"
+            alt="navbarlogo1"
+            width={60}
+            height={60}
+          />
           <div className={styles.links}>
             {[
               {
-                name: "about",
+                name: "परिचय",
                 hash: "#about",
               },
               {
-                name: "work",
+                name: "कार्य",
                 hash: "#work",
               },
               {
-                name: "contact",
+                name: "संपर्क",
                 hash: "#contact",
               },
             ].map(({ name, hash }) => (
@@ -39,28 +45,32 @@ export default function Index({ setIsHovered }) {
           </div>
         </div>
         <div className={styles.banner}>
-          <h3 className="headerText">ANURAG KUMAR</h3>
-          <div onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} className={styles.wrapper}>
+          <h3 className="headerText">अनुराग कुमार</h3>
+          <div
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            className={styles.wrapper}
+          >
             <h1>
               {[
                 {
-                  line: "Turning",
+                  line: "विचारों",
                   style: "",
                 },
                 {
-                  line: "Ideas",
+                  line: "को",
                   style: "",
                 },
                 {
-                  line: "Into",
+                  line: "डिजिटल",
                   style: "",
                 },
                 {
-                  line: "Digital",
+                  line: "वास्तविकता",
                   style: "",
                 },
                 {
-                  line: "Reality",
+                  line: "में बदलना",
                   style: "",
                 },
               ].map(({ line, style }) => (
@@ -99,7 +109,7 @@ export default function Index({ setIsHovered }) {
             </div>
             <div className={styles.resume}>
               <a href="/resume.pdf" download>
-                DOWNLOAD RESUME
+                रिज़्यूमे डाउनलोड करें
               </a>
             </div>
           </div>

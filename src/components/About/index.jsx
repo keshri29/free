@@ -10,7 +10,8 @@ export default function Index({}) {
             <h3 className="headerText">About Me</h3>
             <p className={styles.aboutText}>
               I'm a selectively skilled
-              <span className="alternate"> web developer</span> with a strong focus on producing high quality & impactful digital experiences.
+              <span className="alternate"> web developer</span> with a strong
+              focus on producing high quality & impactful digital experiences.
             </p>
           </div>
         </div>
@@ -21,7 +22,22 @@ export default function Index({}) {
             <h3 className="headerText">What I Work With</h3>
             <div className={styles.wrapper}>
               <h1 className={styles.services}>
-                {["Typescript", "Python", "Golang", "C#", ".NET", "ReactJs", "NextJs", "React Native", "NodeJs", "SQL", "Git", "Docker", "CI/CD", "AWS"].map((skill) => (
+                {[
+                  "JavaScript",
+                  "TypeScript",
+                  "REST APIs",
+                  "Tailwind",
+                  "ReactJs",
+                  "MongoDB",
+                  "Express",
+                  "NextJs",
+                  "NodeJs",
+                  "MySQL",
+                  "Redux",
+                  "HTML5",
+                  "CSS3",
+                  "Git",
+                ].map((skill) => (
                   <div key={skill} className={`${styles.line} line`}>
                     <div className="text">{skill}</div>
                   </div>
