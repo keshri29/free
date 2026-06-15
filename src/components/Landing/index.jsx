@@ -51,7 +51,11 @@ export default function Index({}) {
               {
                 name: "contact",
                 hash: "#contact",
-              }
+              },
+              {
+                name: "blog",
+                hash: "/blog",
+              },
             ].map(({ name, hash }) => (
               <Link 
                 key={name} 

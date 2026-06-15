@@ -37,6 +37,10 @@ export default function Index({ setIsHovered }) {
                 name: "संपर्क",
                 hash: "#contact",
               },
+              {
+                name: "ब्लॉग",
+                hash: "/blog",
+              },
             ].map(({ name, hash }) => (
               <Link key={name} href={hash}>
                 {name}
