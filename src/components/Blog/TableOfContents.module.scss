@@ -1,0 +1,40 @@
+.toc {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--accentRedDark);
+  border-radius: 1.2rem;
+  padding: 2rem 2.2rem;
+  font-size: 1.35rem;
+
+  .title {
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 1.15rem;
+    color: var(--linkText);
+    margin-bottom: 1.2rem;
+  }
+
+  ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  li.sub {
+    margin-left: 1.4rem;
+  }
+
+  a {
+    color: var(--secondaryText);
+    text-decoration: none;
+    line-height: 1.5;
+    transition: color 0.2s;
+
+    &:hover {
+      color: var(--primaryText);
+    }
+  }
+}

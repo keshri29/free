@@ -30,6 +30,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# local dev-only fallback store when no KV is configured (see src/lib/blog/kv.js)
+/.data
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

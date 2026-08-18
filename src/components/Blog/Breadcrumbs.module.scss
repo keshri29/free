@@ -1,0 +1,42 @@
+.breadcrumbs {
+  font-size: 13px;
+  color: var(--alternateText);
+
+  ol {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 6px;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  a {
+    color: var(--alternateText);
+    text-decoration: none;
+    transition: color 180ms ease;
+
+    &:hover {
+      color: var(--linkText);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--linkText);
+      outline-offset: 2px;
+    }
+  }
+
+  span[aria-current="page"] {
+    color: var(--secondaryText);
+  }
+
+  .separator {
+    opacity: 0.5;
+  }
+}

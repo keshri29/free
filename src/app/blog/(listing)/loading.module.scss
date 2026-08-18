@@ -1,0 +1,51 @@
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.container {
+  padding: 10rem 7rem;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.headerSkeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  margin-bottom: 4rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.4rem;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+  border-radius: 1.6rem;
+  border: 1px solid var(--accentRedDark);
+}
+
+.thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 1rem;
+  background: var(--neutralDark);
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+.line {
+  height: 1.4rem;
+  border-radius: 0.4rem;
+  background: var(--neutralDark);
+  animation: pulse 1.4s ease-in-out infinite;
+}

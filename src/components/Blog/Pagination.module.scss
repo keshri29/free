@@ -1,0 +1,35 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 48px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(139, 0, 0, 0.16);
+  font-size: 14px;
+
+  a {
+    color: var(--linkText);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 180ms ease;
+
+    &:hover {
+      color: var(--primaryText);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--linkText);
+      outline-offset: 2px;
+    }
+  }
+
+  .disabled {
+    color: var(--alternateText);
+    opacity: 0.5;
+  }
+
+  .pageIndicator {
+    color: var(--secondaryText);
+  }
+}

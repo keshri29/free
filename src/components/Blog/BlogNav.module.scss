@@ -1,0 +1,81 @@
+@import "../../scss/mixins";
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background: rgba(10, 4, 5, 0.86);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(139, 0, 0, 0.16);
+}
+
+.inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 40px;
+
+  @include respond(tab-port) {
+    padding: 16px 24px;
+  }
+
+  @include respond(phone) {
+    padding: 14px 20px;
+  }
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+}
+
+.navLogo {
+  border-radius: 50%;
+  display: block;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  @include respond(phone) {
+    gap: 20px;
+    font-size: 12px;
+  }
+}
+
+.navLink {
+  color: var(--secondaryText);
+  text-decoration: none;
+  transition: color 180ms ease;
+  padding: 6px 0;
+
+  &:hover {
+    color: var(--primaryText);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--linkText);
+    outline-offset: 4px;
+  }
+}
+
+.navLinkActive {
+  color: var(--primaryText);
+  text-decoration: none;
+  padding: 6px 0;
+  border-bottom: 2px solid var(--linkText);
+
+  &:focus-visible {
+    outline: 2px solid var(--linkText);
+    outline-offset: 4px;
+  }
+}
