@@ -5,13 +5,20 @@ import { SITE_URL, MIN_INDEXABLE_WORDS } from "@/lib/blog/config";
 // routes are always included; blog articles are pulled live from the KV
 // store so newly synced/edited posts show up without a redeploy, and thin
 // (near-empty) articles are excluded rather than indexed.
+// The GitHub Pages static export (see next.config.js) ships without the
+// server-backed /blog section, so it must not be advertised in that build's
+// sitemap — see .github/workflows/deploy.yml.
+const isGithubPagesExport = process.env.GITHUB_PAGES === "true";
+
 export default async function sitemap() {
   const staticRoutes = [
     { url: `${SITE_URL}/`, changeFrequency: "monthly", priority: 1 },
     { url: `${SITE_URL}/projects`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${SITE_URL}/contact-us`, changeFrequency: "yearly", priority: 0.5 },
-    { url: `${SITE_URL}/blog`, changeFrequency: "daily", priority: 0.9 },
+    ...(isGithubPagesExport ? [] : [{ url: `${SITE_URL}/blog`, changeFrequency: "daily", priority: 0.9 }]),
   ];
+
+  if (isGithubPagesExport) return staticRoutes;
 
   let articleRoutes = [];
   try {
