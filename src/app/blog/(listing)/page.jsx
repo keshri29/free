@@ -11,32 +11,20 @@ import Breadcrumbs from "@/components/Blog/Breadcrumbs";
 import Pagination from "@/components/Blog/Pagination";
 import Link from "next/link";
 
-// Time-based revalidation for the rendered page output. Actual content
-// freshness is governed independently by lib/blog/sync.js (SYNC_STALE_MS)
-// and the hourly Vercel Cron — this just bounds how long a cached render
-// of this page can be served before Next re-renders it.
-export const revalidate = 300;
+// Static export (see next.config.js) renders this page once at build time
+// with no request behind it, so it can never read a request's searchParams
+// — Next.js hard-errors the build if a page tries (NEXT_STATIC_GEN_BAILOUT).
+// This page therefore always renders the unfiltered, page-1 view; the
+// category filter and pagination links below are inert on that build (see
+// deploy.yml, which re-syncs the Medium feed on every push instead).
+const page = 1;
+const category = undefined;
 
-function parsePage(searchParams) {
-  const page = parseInt(searchParams?.page || "1", 10);
-  return Number.isFinite(page) && page > 0 ? page : 1;
-}
-
-function buildQueryString({ page, category }) {
-  const params = new URLSearchParams();
-  if (page > 1) params.set("page", String(page));
-  if (category) params.set("category", category);
-  const qs = params.toString();
-  return qs ? `?${qs}` : "";
-}
-
-export async function generateMetadata({ searchParams }) {
-  const page = parsePage(searchParams);
-  const category = searchParams?.category || undefined;
-  const title = category ? `${category} articles` : "Writing & Articles";
+export async function generateMetadata() {
+  const title = "Writing & Articles";
   const description =
     "Practical articles and engineering write-ups on building, shipping, and debugging real software — synced from Medium.";
-  const path = `/blog${buildQueryString({ page, category })}`;
+  const path = "/blog";
 
   return {
     title,
@@ -47,10 +35,7 @@ export async function generateMetadata({ searchParams }) {
   };
 }
 
-export default async function BlogListingPage({ searchParams }) {
-  const page = parsePage(searchParams);
-  const category = searchParams?.category || undefined;
-
+export default async function BlogListingPage() {
   await syncIfStale();
 
   const [{ articles, total, totalPages, page: safePage }, categories, meta] = await Promise.all([

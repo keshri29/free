@@ -193,3 +193,123 @@
     clip-path: inset(80% 0 5% 0);
   }
 }
+
+/* 🟢 "Try it live" badge on embeddable project rows */
+.liveBadge {
+  display: inline-block;
+  margin-left: 1.6rem;
+  padding: 0.3rem 1rem;
+  border-radius: 100px;
+  border: 1px solid rgba(139, 0, 0, 0.5);
+  background: rgba(139, 0, 0, 0.12);
+  color: var(--linkText);
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  vertical-align: middle;
+}
+
+/* 🖼️ Inline live embed modal */
+.embedOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+
+  @include respond(tab-port) {
+    padding: 1rem;
+  }
+}
+
+.embedModal {
+  width: 100%;
+  max-width: 1200px;
+  max-height: 90vh;
+  background: var(--neutralDark);
+  border: 1px solid rgba(139, 0, 0, 0.4);
+  border-radius: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.embedHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.4rem;
+  padding: 1.6rem 2rem;
+  border-bottom: 1px solid rgba(139, 0, 0, 0.3);
+}
+
+.embedTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primaryText);
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.embedActions {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.embedOpenLink {
+  font-size: 1.25rem;
+  color: var(--linkText);
+  text-decoration: underline;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.embedClose {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  border: 1px solid rgba(139, 139, 139, 0.3);
+  background: transparent;
+  color: var(--primaryText);
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    border-color: var(--accentRed);
+    color: var(--accentRedLight);
+  }
+}
+
+.embedFrameWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: #050202;
+
+  @include respond(tab-port) {
+    aspect-ratio: 9 / 14;
+  }
+}
+
+.embedFrame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.embedNote {
+  padding: 1.2rem 2rem;
+  font-size: 1.2rem;
+  color: var(--alternateText);
+  text-transform: none;
+  letter-spacing: normal;
+  border-top: 1px solid rgba(139, 0, 0, 0.2);
+}

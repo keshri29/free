@@ -1,5 +1,20 @@
 const projects = [
   {
+    id: 8,
+    title: 'Logan — Freelancer & Agency Platform',
+    details:
+      'A full agency-style freelancer platform with a live blog and project showcase — try it live, right here.',
+    description: `A full-stack freelancer/agency site with animated page transitions, a blog, and a projects showcase — built with Next.js, GSAP, Locomotive Scroll, and MUI.
+
+Embedded live below so you can click around without leaving this site.`,
+    imageUrl: null,
+    coverImageUrl: null,
+    additionalImages: [],
+    videoUrl: null,
+    projectURL: 'https://freelancer-indol-one.vercel.app/',
+    embeddable: true,
+  },
+  {
     id: 7,
     title: 'TopDevFirms',
     details:

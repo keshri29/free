@@ -1,0 +1,294 @@
+@import "../../scss/mixins";
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--primaryBg);
+}
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 6rem 2rem 8rem;
+
+  @include respond(tab-port) {
+    padding: 4rem 1.6rem 6rem;
+  }
+}
+
+/* ─── Header ──────────────────────────────────────────── */
+.eyebrow {
+  color: var(--linkText);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 3.6rem;
+  font-weight: 800;
+  color: var(--primaryText);
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin: 1.2rem 0 0.6rem;
+
+  @include respond(tab-port) {
+    font-size: 2.6rem;
+  }
+}
+
+.headline {
+  font-size: 1.6rem;
+  color: var(--secondaryText);
+  max-width: 70ch;
+  line-height: 1.6;
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.8rem;
+  margin-top: 1.6rem;
+  font-size: 1.35rem;
+  color: var(--secondaryText);
+}
+
+/* ─── Banner + avatar ─────────────────────────────────── */
+.banner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 4.5;
+  border-radius: 1.4rem;
+  overflow: hidden;
+  margin: 3rem 0 0;
+  background: var(--neutralDark);
+
+  @include respond(tab-port) {
+    aspect-ratio: 16 / 7;
+  }
+}
+
+.avatarWrap {
+  position: relative;
+  width: 12rem;
+  height: 12rem;
+  margin-top: -6rem;
+  margin-left: 3rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--primaryBg);
+  background: var(--neutralDark);
+
+  @include respond(tab-port) {
+    width: 9rem;
+    height: 9rem;
+    margin-top: -4.5rem;
+    margin-left: 1.6rem;
+  }
+}
+
+.profileActions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -3.5rem;
+
+  @include respond(tab-port) {
+    margin-top: 1.5rem;
+    justify-content: flex-start;
+  }
+}
+
+/* ─── Section blocks ──────────────────────────────────── */
+.section {
+  margin-top: 5rem;
+}
+
+.sectionTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--linkText);
+  margin-bottom: 1.8rem;
+}
+
+.prose {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: var(--secondaryText);
+
+  p {
+    margin: 0 0 1.6rem;
+  }
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 1.6rem;
+}
+
+.tag {
+  padding: 0.4rem 1.2rem;
+  border: 1px solid rgba(139, 0, 0, 0.5);
+  border-radius: 100px;
+  font-size: 1.2rem;
+  color: var(--linkText);
+  letter-spacing: 0.04em;
+  background: rgba(139, 0, 0, 0.08);
+}
+
+.tagMuted {
+  padding: 0.5rem 1.4rem;
+  border: 1px solid rgba(139, 139, 139, 0.25);
+  border-radius: 100px;
+  font-size: 1.3rem;
+  color: var(--secondaryText);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* ─── Open to work ─────────────────────────────────────── */
+.openToWork {
+  border: 1px solid rgba(139, 0, 0, 0.35);
+  background: rgba(139, 0, 0, 0.06);
+  border-radius: 1.4rem;
+  padding: 2.4rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.8rem;
+
+  @include respond(tab-port) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.openToWorkItem {
+  font-size: 1.4rem;
+  color: var(--secondaryText);
+
+  strong {
+    display: block;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--primaryText);
+    margin-bottom: 0.4rem;
+  }
+}
+
+/* ─── Row lists (experience / education / certs) ──────── */
+.rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  padding: 2.2rem 0;
+  border-top: 1px solid rgba(139, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  &:last-child {
+    border-bottom: 1px solid rgba(139, 0, 0, 0.25);
+  }
+}
+
+.rowTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primaryText);
+}
+
+.rowSub {
+  font-size: 1.4rem;
+  color: var(--secondaryText);
+}
+
+.rowMeta {
+  font-size: 1.3rem;
+  color: var(--alternateText);
+}
+
+.rowDesc {
+  font-size: 1.45rem;
+  color: var(--secondaryText);
+  line-height: 1.7;
+  margin-top: 0.6rem;
+  max-width: 80ch;
+}
+
+/* ─── Featured card ────────────────────────────────────── */
+.featuredCard {
+  display: block;
+  border: 1px solid rgba(139, 0, 0, 0.5);
+  border-radius: 1.4rem;
+  padding: 2.2rem;
+  text-decoration: none;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: var(--accentRed);
+  }
+}
+
+.featuredTitle {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--primaryText);
+}
+
+.featuredUrl {
+  font-size: 1.3rem;
+  color: var(--linkText);
+  margin-top: 0.3rem;
+}
+
+.featuredDesc {
+  font-size: 1.45rem;
+  color: var(--secondaryText);
+  line-height: 1.7;
+  margin-top: 1rem;
+}
+
+/* ─── CTA buttons ──────────────────────────────────────── */
+.ctaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+  margin-top: 6rem;
+}
+
+.ctaPrimary {
+  padding: 1.1rem 2.2rem;
+  border-radius: 100px;
+  background: var(--accentRed);
+  color: var(--primaryText);
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: var(--accentRedLight);
+  }
+}
+
+.ctaSecondary {
+  padding: 1.1rem 2.2rem;
+  border-radius: 100px;
+  border: 1px solid rgba(139, 139, 139, 0.35);
+  color: var(--secondaryText);
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    color: var(--primaryText);
+    border-color: var(--secondaryText);
+  }
+}

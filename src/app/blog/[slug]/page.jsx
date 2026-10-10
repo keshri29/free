@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./page.module.scss";
-import { getArticleBySlug, getRelatedArticles } from "@/lib/blog/store";
+import { getArticleBySlug, getRelatedArticles, getAllArticleMeta } from "@/lib/blog/store";
 import { syncIfStale } from "@/lib/blog/sync";
 import { articleUrl, buildArticleJsonLd, buildBreadcrumbJsonLd, absoluteImageUrl } from "@/lib/blog/seo";
 import { SITE_URL, MIN_INDEXABLE_WORDS, RELATED_ARTICLES_LIMIT } from "@/lib/blog/config";
@@ -12,9 +12,17 @@ import BlogNav from "@/components/Blog/BlogNav";
 import ArticleCard from "@/components/Blog/ArticleCard";
 import Breadcrumbs from "@/components/Blog/Breadcrumbs";
 import TableOfContents from "@/components/Blog/TableOfContents";
-import ViewTracker from "@/components/Blog/ViewTracker";
 
-export const revalidate = 300;
+// Static export (see next.config.js) has no server, so every article slug
+// must be known and rendered at build time — sync first so this build's
+// fetch of the Medium feed is what populates the archive.
+export async function generateStaticParams() {
+  await syncIfStale();
+  const meta = await getAllArticleMeta();
+  return meta.map((entry) => ({ slug: entry.slug }));
+}
+
+export const dynamicParams = false;
 
 export async function generateMetadata({ params }) {
   const article = await getArticleBySlug(params.slug);
@@ -75,8 +83,6 @@ export default async function ArticlePage({ params }) {
 
   return (
     <div className={styles.container}>
-      <ViewTracker slug={article.slug} />
-
       {jsonLd.map((ld, i) => (
         // eslint-disable-next-line react/no-array-index-key
         <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />

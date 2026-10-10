@@ -30,16 +30,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # The blog section (src/app/blog, src/app/api) is a server-backed
-      # feature (Medium sync, Redis/KV storage, ISR, live view tracking) and
-      # cannot be part of a static export. It is only removed from this
-      # ephemeral CI checkout so `next build` can produce a static site —
-      # nothing is deleted from the repository itself. The full dynamic app,
-      # blog included, keeps running wherever it's deployed today (e.g.
-      # Vercel), unaffected by this workflow.
-      - name: Strip server-only routes for static export
-        run: rm -rf src/app/blog src/app/api
-
       - name: Build static export
         env:
           GITHUB_PAGES: "true"
